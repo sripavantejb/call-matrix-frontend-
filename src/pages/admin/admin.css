@@ -1,0 +1,485 @@
+/* Platform admin — uses dashboard shell tokens from dashboard.css */
+
+.adminPanel {
+  max-width: 1100px;
+}
+
+.adminHint {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.adminTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.adminTab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0 14px;
+  margin-bottom: -1px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.adminTab:hover {
+  color: var(--text-midnight);
+}
+
+.adminTabIcon {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.adminTabActive {
+  color: var(--text-primary);
+}
+
+.adminTabActive::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 1px;
+}
+
+.adminTabPanel {
+  padding-bottom: 32px;
+}
+
+.adminMetrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.adminSection {
+  margin-bottom: 28px;
+}
+
+.adminSectionTitle {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-midnight);
+}
+
+.adminBulletList {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.adminBulletList li {
+  margin-bottom: 8px;
+}
+
+.adminCode {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-midnight);
+}
+
+.adminToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.adminSearchWrap {
+  position: relative;
+  flex: 1;
+  min-width: min(100%, 240px);
+  max-width: 400px;
+}
+
+.adminSearchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.adminSearchInput {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  border-radius: var(--radius-button);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.adminSearchInput:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 0;
+}
+
+.adminPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-button);
+  border: none;
+  background: var(--text-midnight);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.adminPrimaryBtn:hover {
+  opacity: 0.92;
+}
+
+.adminTableWrap {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+  box-shadow: var(--shadow-card);
+  overflow: auto;
+}
+
+.adminTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.adminTable th,
+.adminTable td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: top;
+}
+
+.adminTable th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--bg-subtle);
+}
+
+.adminTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.adminCellPrimary {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.adminCellMuted {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.adminPlanPill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--accent-blue-bg);
+  color: var(--accent-blue-fg);
+}
+
+.adminStatusOn {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--accent-green-bg);
+  color: var(--accent-green-fg);
+}
+
+.adminStatusOff {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+}
+
+.adminRowActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.adminGhostBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--link);
+  cursor: pointer;
+}
+
+.adminGhostBtn:hover {
+  background: var(--bg-subtle);
+  color: var(--link-hover);
+}
+
+.adminGhostDanger {
+  color: var(--danger-fg);
+}
+
+.adminGhostDanger:hover {
+  background: var(--danger-bg-hover);
+  color: var(--danger-fg);
+}
+
+.adminEmpty {
+  margin: 0;
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.adminUsageSummary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 559px) {
+  .adminUsageSummary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adminUsageCard {
+  padding: 16px 18px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+  box-shadow: var(--shadow-card);
+}
+
+.adminUsageLabel {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.adminUsageValue {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-midnight);
+}
+
+.adminUsageHint {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.adminModalFootnote {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.adminSaasCard {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+  box-shadow: var(--shadow-card);
+  padding: 20px 22px 24px;
+  margin-bottom: 24px;
+}
+
+.adminSaasCardHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.adminSaasCardTitle {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-midnight);
+}
+
+.adminSaasCardDesc {
+  margin: 0;
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.adminSaasCardDesc a {
+  color: var(--link);
+  font-weight: 600;
+}
+
+.adminPasswordRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .adminPasswordRow {
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .adminPasswordRow .input-field {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+.adminGeneratePwBtn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.adminActionMenuWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.adminActionMenuBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-page);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.adminActionMenuBtn:hover {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.adminActionMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  z-index: 20;
+  min-width: 200px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+  box-shadow: var(--shadow-card);
+}
+
+.adminActionMenu li {
+  margin: 0;
+}
+
+.adminActionMenuItem {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.adminActionMenuItem:hover {
+  background: var(--bg-subtle);
+}
+
+.adminActionMenuItemDanger {
+  color: var(--danger-fg);
+}
+
+.adminActionMenuItemDanger:hover {
+  background: var(--danger-bg-hover);
+}

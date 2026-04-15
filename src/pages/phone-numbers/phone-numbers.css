@@ -1,0 +1,100 @@
+.pnToolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.pnToolbar .agentsSearchCard {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
+
+.pnSegmentWrap {
+  flex-shrink: 0;
+}
+
+.pnSegmentWrap .segmented {
+  margin-bottom: 0;
+}
+
+.pnStatLabelRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pnStatInfo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: help;
+  border-radius: var(--radius-pill);
+}
+
+.pnStatInfo:hover {
+  color: var(--text-primary);
+}
+
+.pnPhoneCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pnPhoneIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent-violet-bg);
+  color: var(--accent-violet-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pnPhoneDigits {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.pnTypeBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pnBadgeInbound {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--accent-green-bg);
+  color: var(--accent-green-fg);
+}
+
+.pnBadgeOutbound {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--accent-blue-bg);
+  color: var(--accent-blue-fg);
+}
+
+.pnEmptyCell {
+  text-align: center;
+  padding: 48px 24px !important;
+  color: var(--text-secondary);
+  font-size: 14px;
+}

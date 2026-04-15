@@ -1,0 +1,14 @@
+/* Dashboard-specific utilities; layout lives in component modules */
+
+.appViewport {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-main {
+  background: var(--bg-subtle);
+  min-height: 0;
+}

@@ -1,0 +1,100 @@
+.adminShell {
+  display: flex;
+  gap: 0;
+  min-height: min(70vh, calc(100vh - 120px));
+  margin: 0 -4px;
+}
+
+@media (max-width: 900px) {
+  .adminShell {
+    flex-direction: column;
+  }
+}
+
+.adminShellSidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 16px 12px 24px 0;
+  border-right: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 900px) {
+  .adminShellSidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 12px;
+  }
+}
+
+.adminShellBrand {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-midnight);
+}
+
+.adminShellNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.adminShellLink {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.adminShellLink:hover {
+  background: var(--bg-subtle);
+  color: var(--text-midnight);
+}
+
+.adminShellLinkActive {
+  background: var(--bg-subtle);
+  color: var(--text-midnight);
+  font-weight: 600;
+}
+
+.adminShellMain {
+  flex: 1;
+  min-width: 0;
+  padding: 0 0 24px 20px;
+}
+
+@media (max-width: 900px) {
+  .adminShellMain {
+    padding-left: 0;
+    padding-top: 16px;
+  }
+}
+
+.adminTokenHint {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.adminPageTitle {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-midnight);
+}
+
+.adminPageSub {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}

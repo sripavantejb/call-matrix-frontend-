@@ -1,0 +1,149 @@
+.kbToolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.kbToolbar .agentsSearchCard {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
+
+.kbStatSingle {
+  max-width: 280px;
+}
+
+.kbStatIconPurple {
+  background: var(--accent-violet-bg);
+  color: var(--accent-violet-fg);
+}
+
+.kbEmptyCell {
+  text-align: center;
+  padding: 48px 24px !important;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.kbDropZone {
+  margin: 16px 0;
+  padding: 36px 20px;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-card);
+  background: var(--bg-subtle);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.kbDropZone:hover,
+.kbDropZoneKb {
+  border-color: var(--text-secondary);
+  background: var(--bg-page);
+}
+
+.kbDropZoneIcon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  background: var(--accent-violet-bg);
+  color: var(--accent-violet-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kbDropZoneTitle {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.kbDropZoneHint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.kbFileList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.kbFileList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius-button);
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--bg-subtle);
+  margin-bottom: 6px;
+}
+
+.kbFileList li:last-child {
+  margin-bottom: 0;
+}
+
+.kbFileRemove {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.kbFileRemove:hover {
+  color: var(--text-midnight);
+  background: rgba(34, 42, 53, 0.08);
+}
+
+.kbModalFooterSplit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.kbModalFooterActions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.kbMutedCount {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.kbTableActions {
+  display: flex;
+  gap: 8px;
+}
+
+.kbFileList .truncate {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

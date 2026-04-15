@@ -1,0 +1,296 @@
+:root {
+  color-scheme: light;
+
+  --text-primary: #242424;
+  --text-midnight: #111111;
+  --text-secondary: #898989;
+
+  --bg-page: #ffffff;
+  --bg-subtle: #f5f5f5;
+  --border-subtle: rgba(34, 42, 53, 0.08);
+  --border-strong: rgba(34, 42, 53, 0.18);
+  --overlay-scrim: rgba(17, 17, 17, 0.4);
+  --input-border: rgb(118, 118, 118);
+
+  --link: #0099ff;
+  --link-hover: #0088e6;
+
+  --shadow-card:
+    rgba(19, 19, 22, 0.7) 0px 1px 5px -4px,
+    rgba(34, 42, 53, 0.08) 0px 0px 0px 1px,
+    rgba(34, 42, 53, 0.05) 0px 4px 8px 0px;
+
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-pill: 9999px;
+
+  --font-display: 'Cal Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'Roboto Mono', monospace;
+
+  --focus-ring: rgba(59, 130, 246, 0.5);
+
+  --chart-1: #111111;
+  --chart-2: #374151;
+  --chart-3: #6b7280;
+  --chart-4: #9ca3af;
+  --chart-5: #d1d5db;
+  --chart-6: #e5e7eb;
+
+  --accent-violet-bg: rgba(126, 34, 206, 0.12);
+  --accent-violet-fg: #7c3aed;
+  --accent-green-bg: rgba(22, 163, 74, 0.12);
+  --accent-green-fg: #16a34a;
+  --accent-blue-bg: rgba(37, 99, 235, 0.12);
+  --accent-blue-fg: #2563eb;
+  --accent-orange-bg: rgba(234, 88, 12, 0.12);
+  --accent-orange-fg: #ea580c;
+  --accent-teal-bg: rgba(13, 148, 136, 0.12);
+  --accent-teal-fg: #0d9488;
+  --accent-red-bg: rgba(220, 38, 38, 0.12);
+  --accent-red-fg: #dc2626;
+
+  --danger-fg: #991b1b;
+  --danger-border: rgba(153, 27, 27, 0.35);
+  --danger-bg-hover: rgba(153, 27, 27, 0.06);
+  --success-fg: #166534;
+  --success-bg: rgba(22, 163, 74, 0.12);
+  --success-solid: #22c55e;
+  --info-fg: #1e40af;
+  --info-bg: rgba(59, 130, 246, 0.12);
+  --neutral-line: rgba(34, 42, 53, 0.15);
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: var(--bg-page);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --text-primary: #f4f4f5;
+  --text-midnight: #e4e4e7;
+  --text-secondary: #a1a1aa;
+
+  --bg-page: #0c0c0e;
+  --bg-subtle: #18181b;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --overlay-scrim: rgba(0, 0, 0, 0.65);
+  --input-border: rgba(255, 255, 255, 0.22);
+
+  --link: #38bdf8;
+  --link-hover: #7dd3fc;
+
+  --shadow-card:
+    rgba(0, 0, 0, 0.45) 0px 1px 5px -4px,
+    rgba(255, 255, 255, 0.08) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.35) 0px 4px 12px 0px;
+
+  --focus-ring: rgba(56, 189, 248, 0.45);
+
+  --chart-1: #f4f4f5;
+  --chart-2: #d4d4d8;
+  --chart-3: #a1a1aa;
+  --chart-4: #71717a;
+  --chart-5: #52525b;
+  --chart-6: #3f3f46;
+
+  --accent-violet-bg: rgba(167, 139, 250, 0.15);
+  --accent-violet-fg: #c4b5fd;
+  --accent-green-bg: rgba(74, 222, 128, 0.12);
+  --accent-green-fg: #4ade80;
+  --accent-blue-bg: rgba(96, 165, 250, 0.15);
+  --accent-blue-fg: #60a5fa;
+  --accent-orange-bg: rgba(251, 146, 60, 0.12);
+  --accent-orange-fg: #fb923c;
+  --accent-teal-bg: rgba(45, 212, 191, 0.12);
+  --accent-teal-fg: #2dd4bf;
+  --accent-red-bg: rgba(248, 113, 113, 0.12);
+  --accent-red-fg: #f87171;
+
+  --danger-fg: #fca5a5;
+  --danger-border: rgba(248, 113, 113, 0.35);
+  --danger-bg-hover: rgba(248, 113, 113, 0.1);
+  --success-fg: #4ade80;
+  --success-bg: rgba(74, 222, 128, 0.12);
+  --success-solid: #22c55e;
+  --info-fg: #93c5fd;
+  --info-bg: rgba(96, 165, 250, 0.15);
+  --neutral-line: rgba(255, 255, 255, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius-button);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--bg-page);
+  background: var(--text-primary);
+  cursor: pointer;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-button);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-midnight);
+  background: var(--bg-page);
+  box-shadow: var(--shadow-card);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  opacity: 0.85;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--radius-button);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-page);
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.btn-outline:hover {
+  background: var(--bg-subtle);
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-button);
+  border: 1px solid var(--input-border);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-page);
+}
+
+.input-field::placeholder {
+  color: var(--text-secondary);
+}
+
+.textarea-field {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px 12px;
+  border-radius: var(--radius-button);
+  border: 1px solid var(--input-border);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-primary);
+  resize: vertical;
+  background: var(--bg-page);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

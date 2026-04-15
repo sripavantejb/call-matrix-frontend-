@@ -1,0 +1,415 @@
+.cmDateModal {
+  max-width: 720px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.cmDateModalBody {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  min-height: 320px;
+}
+
+@media (max-width: 640px) {
+  .cmDateModalBody {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cmQuickCol {
+  padding: 20px 16px;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-subtle);
+}
+
+.cmQuickTitle {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.cmQuickList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cmQuickItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-button);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-midnight);
+  cursor: pointer;
+}
+
+.cmQuickItem:hover:not(.cmQuickItemActive) {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(34, 42, 53, 0.1);
+}
+
+.cmQuickItemActive {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-weight: 600;
+  border-color: rgba(34, 42, 53, 0.2);
+  box-shadow:
+    inset 3px 0 0 0 var(--text-primary),
+    rgba(34, 42, 53, 0.06) 0 1px 3px;
+}
+
+.cmQuickItemActive:hover {
+  background: var(--bg-page);
+  border-color: rgba(34, 42, 53, 0.25);
+}
+
+.cmCalCol {
+  padding: 20px 24px 16px;
+  background: var(--bg-page);
+}
+
+.cmCalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cmCalMonth {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cmCalNav {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: var(--radius-button);
+  background: var(--bg-page);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-midnight);
+}
+
+.cmCalNav:hover {
+  opacity: 0.85;
+}
+
+.cmWeekRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.cmWeekCell {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.cmGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cmDay.cmDayEmpty {
+  min-height: 36px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.cmDay {
+  min-height: 36px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-button);
+  background: var(--bg-page);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+}
+
+.cmDay:hover:not(:disabled):not(.cmDayInRange) {
+  opacity: 0.9;
+}
+
+/* In-range days: must contrast clearly with white calendar (not --bg-subtle alone) */
+.cmDayInRange:not(.cmDayStart):not(.cmDayEnd) {
+  background: rgba(36, 36, 36, 0.09);
+  border-color: rgba(34, 42, 53, 0.12);
+  box-shadow: none;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.cmDayInRange:not(.cmDayStart):not(.cmDayEnd):hover {
+  background: rgba(36, 36, 36, 0.14);
+}
+
+.cmDayStart,
+.cmDayEnd {
+  background: var(--text-primary);
+  color: var(--bg-page);
+  border-color: var(--text-primary);
+  box-shadow: none;
+  font-weight: 600;
+  z-index: 1;
+}
+
+/* When start and end are the same day, keep single pill */
+.cmDay.cmDayStart.cmDayEnd {
+  border-radius: var(--radius-button);
+}
+
+.cmRangeSummary {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.cmDateModalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+}
+
+.cmHeaderActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.cmMetricGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1199px) {
+  .cmMetricGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .cmMetricGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cmStatIconBlue {
+  background: var(--accent-blue-bg);
+  color: var(--accent-blue-fg);
+}
+
+.cmStatIconGreen {
+  background: var(--accent-green-bg);
+  color: var(--accent-green-fg);
+}
+
+.cmStatIconOrange {
+  background: var(--accent-orange-bg);
+  color: var(--accent-orange-fg);
+}
+
+.cmStatIconTeal {
+  background: var(--accent-teal-bg);
+  color: var(--accent-teal-fg);
+}
+
+.cmStatIconPurple {
+  background: var(--accent-violet-bg);
+  color: var(--accent-violet-fg);
+}
+
+.cmStatIconRed {
+  background: var(--accent-red-bg);
+  color: var(--accent-red-fg);
+}
+
+.cmToolbarRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cmToolbarRow .agentsSearchCard {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
+
+.cmToolbarMeta {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.cmFiltersPanel {
+  background: var(--bg-page);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.cmFiltersTitle {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cmFiltersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .cmFiltersGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cmFiltersGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cmFieldLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.cmPagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+}
+
+.cmPaginationInfo {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.cmStatusPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.cmStatusPicked {
+  background: rgba(22, 163, 74, 0.12);
+  color: #166534;
+}
+
+.cmStatusNotPicked {
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+}
+
+.cmStatusBusy {
+  background: rgba(13, 148, 136, 0.12);
+  color: #0f766e;
+}
+
+.cmStatusVoicemail {
+  background: rgba(126, 34, 206, 0.12);
+  color: #6b21a8;
+}
+
+.cmStatusFailed {
+  background: rgba(220, 38, 38, 0.12);
+  color: #991b1b;
+}
+
+.cmStatusInProgress {
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+}
+
+.cmTableWrap {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.cmEmptyCell {
+  text-align: center;
+  padding: 48px 24px !important;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.cmCellDatePrimary {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.cmCellDateSecondary {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.cmPhoneCell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-outline.cmFilterActive {
+  border-color: var(--text-primary);
+  background: var(--bg-subtle);
+}

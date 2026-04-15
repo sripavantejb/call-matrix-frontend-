@@ -1,0 +1,76 @@
+/* Admin login — DESIGN.md: white/surface canvas, shadow-card elevation, grayscale + link blue */
+
+.adminLoginRoot {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg-page);
+}
+
+.adminLoginCard {
+  width: 100%;
+  max-width: 400px;
+  padding: 28px 24px 24px;
+  border-radius: var(--radius-card);
+  background: var(--bg-page);
+  box-shadow: var(--shadow-card);
+}
+
+.adminLoginTitle {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  color: var(--text-midnight);
+}
+
+.adminLoginSub {
+  margin: 0 0 24px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.adminLoginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.adminLoginLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-top: 16px;
+}
+
+.adminLoginLabel:first-of-type {
+  margin-top: 0;
+}
+
+.adminLoginError {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-button);
+  background: var(--accent-red-bg);
+  border: 1px solid var(--danger-border);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--danger-fg);
+}
+
+.adminLoginSubmit {
+  margin-top: 20px;
+  width: 100%;
+}
