@@ -176,6 +176,24 @@
   opacity: 0.92;
 }
 
+.adminPrimaryBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.adminPrimaryBtn:disabled:hover {
+  opacity: 0.5;
+}
+
+.adminActionMenuBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.adminActionMenuBtn:disabled:hover {
+  background: var(--bg-page);
+}
+
 .adminTableWrap {
   border-radius: var(--radius-card);
   border: 1px solid var(--border-subtle);

@@ -35,8 +35,6 @@ export function AdminLogin() {
 
     setSubmitting(true)
     try {
-      setAdminLoggedIn(true)
-
       const base = getApiBaseUrl()
       if (base) {
         try {
@@ -45,16 +43,36 @@ export function AdminLogin() {
             password: ADMIN_PASSWORD,
           })
           if (res?.token) {
+            setAdminLoggedIn(true)
             setStoredToken(res.token)
             setAdminDemoMode(false)
             navigate('/admin/dashboard', { replace: true })
             return
           }
-        } catch {
-          /* API unavailable or invalid — use offline demo session */
+        } catch (err) {
+          const msg = err instanceof Error ? err.message : String(err)
+          if (
+            msg.includes('Database unavailable') ||
+            /database/i.test(msg) ||
+            msg.includes("Can't reach database")
+          ) {
+            setError(msg)
+            return
+          }
+          if (
+            msg.includes('Invalid email') ||
+            msg.includes('Account disabled') ||
+            msg.includes('HTTP 401') ||
+            msg.includes('HTTP 403')
+          ) {
+            setError(msg)
+            return
+          }
+          /* API unreachable or other — offline demo session */
         }
       }
 
+      setAdminLoggedIn(true)
       setAdminDemoMode(true)
       navigate('/admin/dashboard', { replace: true })
     } finally {
